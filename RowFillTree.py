@@ -17,6 +17,8 @@ def node(filled_lengths_map: dict[int, list[str]], side_lengths_map: dict[int, i
             #if there is a 1 in the new row and the one isn't at the front or back then the row is invalid due to us only having one 1
             if new_row.__contains__("1") and not (new_row[0] == "1" or new_row[len(new_row)-1] == "1"):
                 continue
+            if new_row.__contains__("2") and not two_valid(new_row):
+                continue
             filled_lengths_map[target_length].append(new_row)
     else:
         new_lengths = []
@@ -30,6 +32,19 @@ def node(filled_lengths_map: dict[int, list[str]], side_lengths_map: dict[int, i
             new_map = side_lengths_map.copy()
             new_map[side_length] -= 1
             node(filled_lengths_map, new_map, new_row, new_length, target_length)
+
+def two_valid(row: str):
+    count_in_row = get_number_count_in_row(row)
+    if len(row) < 2:
+        return True
+    for index in range(1, len(row) - 1):
+        if row[index] == "2":
+            if int(row[index - 1]) > 4 and int(row[index + 1]) > 4:
+                return False
+            if count_in_row[2] == 2:
+                if int(row[index - 1]) > 2 and int(row[index + 1]) > 2:
+                    return False
+    return True
 
 def get_number_count_in_row(row: str)-> dict[int, int]:
     output: dict[int,int] = dict()

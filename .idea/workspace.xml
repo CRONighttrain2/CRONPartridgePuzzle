@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb4a9ce9-2718-4a59-9252-bdaecc55c45e" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/Board.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree.py" afterDir="false" />
+    <list default="true" id="eb4a9ce9-2718-4a59-9252-bdaecc55c45e" name="Changes" comment="Start of refactor to speed up code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board.py" beforeDir="false" afterPath="$PROJECT_DIR$/Board.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RowFillTree.py" beforeDir="false" afterPath="$PROJECT_DIR$/RowFillTree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tree.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,11 +81,29 @@
       <option name="project" value="LOCAL" />
       <updated>1756490731040</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="First working version">
+      <option name="closed" value="true" />
+      <created>1756772943888</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1756772943888</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Start of refactor to speed up code">
+      <option name="closed" value="true" />
+      <created>1756776185214</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1756776185214</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="First working version" />
+    <MESSAGE value="Start of refactor to speed up code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start of refactor to speed up code" />
   </component>
 </project>

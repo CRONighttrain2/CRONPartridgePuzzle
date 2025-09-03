@@ -19,8 +19,6 @@ BrightWhite= "\u001b[97m"
 Reset= "\u001b[0m"
 
 class Board:
-
-
     def __init__(self, length: int):
         self.length = length
         self.board: list[list[int]] = [None] * length
@@ -40,6 +38,13 @@ class Board:
                 if self.board[y][x] == 0:
                     return {"x": x,"y": y}
         return {"error":-1}
+
+    def get_amount_of_open_space(self) -> int:
+        opening: dict[str, int] = self.get_next_opening()
+        for x in range(opening["x"], self.length):
+            if self.board[opening["y"]][x] != 0:
+                return  x - opening["x"]
+        return self.length - opening["x"]
 
     def can_place(self, square_length: int, position: dict[str, int]) -> bool:
         if position.keys().__contains__("error"):

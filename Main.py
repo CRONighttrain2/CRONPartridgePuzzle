@@ -15,7 +15,10 @@ if __name__ == '__main__':
     board = Board(length)
     # we can speed up this program by having all the available options for all sizes of row pre-computed
     filledLengthsMap: dict[int, list[str]] = dict()
-    for i in range(1, min(length+1,32)):
-        print(i)
+    for i in range(1, length+1):
         RowFillTree.node(filledLengthsMap, boardNumbersMap, "", 0,i)
+        print(i)
+    if max(filledLengthsMap.keys()) == length:
+        filledLengthsMap[length] = [row for row in filledLengthsMap[length] if "1" not in row]
     print(filledLengthsMap)
+    print(node(board,boardNumbersMap,0,filledLengthsMap))
