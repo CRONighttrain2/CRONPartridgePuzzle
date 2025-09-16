@@ -1,4 +1,5 @@
 from array import ArrayType
+from multiprocessing.managers import rebuild_as_list
 
 Black= "\u001b[30m"
 Red= "\u001b[31m"
@@ -20,6 +21,8 @@ Reset= "\u001b[0m"
 
 class Board:
     def __init__(self, length: int):
+        if length <= 0:
+            raise ValueError("length when constructing board is less than or equal to 0")
         self.length = length
         self.board: list[list[int]] = [None] * length
         for i in range (0, length):
@@ -32,6 +35,35 @@ class Board:
             new_board.board[i] = self.board[i].copy()
         return new_board
 
+    def get_smallest_opening(self) -> dict[str, int]:
+        output: dict[str, int] = dict(x=0, y=0, len=self.length)
+        current_counted_len: int = 0
+        next_open: dict[str, int] = self.get_next_opening()
+        for y in range(next_open["y"], self.length):
+            for x in range(next_open["x"] if y == next_open["y"] else 0, self.length):
+                print(f'{y},{x},{current_counted_len}')
+                if output["len"] == 1:
+                    return output
+                if x == self.length - 1 and current_counted_len == x:
+                    return output
+                if self.board[y][x] != 0 or x == self.length - 1:
+                    if 0 < current_counted_len < output["len"]:
+                        output["x"] = x - current_counted_len
+                        output["y"] = y
+                        output["len"] = current_counted_len
+                        if x == self.length - 1 and self.board[y][x] == 0:
+                            output["len"] += 1
+                        current_counted_len = 0
+                    elif x == self.length - 1 and current_counted_len == 0 and self.board[y][x] == 0:
+                        output["x"] = x - current_counted_len
+                        output["y"] = y
+                        output["len"] = 1
+                        return output
+                else:
+                    current_counted_len += 1
+            current_counted_len = 0
+        return output
+
     def get_next_opening(self) -> dict[str, int]:
         for y in range(0, self.length):
             for x in range(0, self.length):
@@ -39,8 +71,7 @@ class Board:
                     return {"x": x,"y": y}
         return {"error":-1}
 
-    def get_amount_of_open_space(self) -> int:
-        opening: dict[str, int] = self.get_next_opening()
+    def get_amount_of_open_space(self, opening: dict[str, int]) -> int:
         for x in range(opening["x"], self.length):
             if self.board[opening["y"]][x] != 0:
                 return  x - opening["x"]
