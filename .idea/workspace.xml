@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb4a9ce9-2718-4a59-9252-bdaecc55c45e" name="Changes" comment="Start of refactor to speed up code">
+    <list default="true" id="eb4a9ce9-2718-4a59-9252-bdaecc55c45e" name="Changes" comment="Added function to Board class to find the smallest available opening">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Board.py" beforeDir="false" afterPath="$PROJECT_DIR$/Board.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
@@ -20,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Python Unit Test" />
       </list>
     </option>
   </component>
@@ -49,19 +50,128 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests for BoardTestClasses.BoardCreationTests.executor": "Run",
+    "Python tests.Python tests for BoardTests.BoardCreationTests.executor": "Run",
+    "Python tests.Python tests for BoardTests.board_creation_tests.executor": "Run",
+    "Python tests.Python tests for Tests.BlockPlacementTests.B.executor": "Run",
+    "Python tests.Python tests in BlockPlacementTests.py.executor": "Run",
+    "Python tests.Python tests in BoardCreationTests.py.executor": "Run",
+    "Python tests.Python tests in BoardTests.py.executor": "Run",
     "Python.Board.executor": "Run",
+    "Python.BoardTests.executor": "Run",
     "Python.Main.executor": "Run",
     "Python.Tree.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true"
+    "ignore.virus.scanning.warn.message": "true",
+    "settings.editor.selected.configurable": "configurable.group.language"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CRONight\PycharmProjects\PartridgePuzzle\Tests" />
+      <recent name="C:\Users\CRONight\PycharmProjects\PartridgePuzzle" />
+      <recent name="C:\Users\CRONight\PycharmProjects\PartridgePuzzle\test classes" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Main">
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PartridgePuzzle" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for BoardTestClasses.BoardCreationTests" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PartridgePuzzle" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;BoardTestClasses.BoardCreationTests&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for Tests.BlockPlacementTests.B" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PartridgePuzzle" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Tests.BlockPlacementTests.B&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for Tests.BoardCreationTests" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PartridgePuzzle" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Tests.BoardCreationTests&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in BoardCreationTests.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PartridgePuzzle" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Tests/BoardCreationTests.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Main" />
+        <item itemvalue="Python tests.Python tests for Tests.BlockPlacementTests.B" />
+        <item itemvalue="Python tests.Python tests for BoardTestClasses.BoardCreationTests" />
+        <item itemvalue="Python tests.Python tests in BoardCreationTests.py" />
+        <item itemvalue="Python tests.Python tests for Tests.BoardCreationTests" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-79ce2b023f03-d902c0275401-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-252.25557.130" />
+        <option value="bundled-python-sdk-8753aad8314d-d902c0275401-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-252.25557.178" />
       </set>
     </attachedChunks>
   </component>
@@ -97,13 +207,49 @@
       <option name="project" value="LOCAL" />
       <updated>1756776185214</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactored code to pre-compute all possible variations of tile placement for every given row length up to the length of the board">
+      <option name="closed" value="true" />
+      <created>1756925704278</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1756925704278</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added comments and moved some stuff around">
+      <option name="closed" value="true" />
+      <created>1756925939977</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1756925939977</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added unit tests">
+      <option name="closed" value="true" />
+      <created>1758062832833</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1758062832833</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added function to Board class to find the smallest available opening">
+      <option name="closed" value="true" />
+      <created>1758066209083</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1758066209083</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="First working version" />
     <MESSAGE value="Start of refactor to speed up code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start of refactor to speed up code" />
+    <MESSAGE value="Refactored code to pre-compute all possible variations of tile placement for every given row length up to the length of the board" />
+    <MESSAGE value="added comments and moved some stuff around" />
+    <MESSAGE value="Added unit tests" />
+    <MESSAGE value="Added function to Board class to find the smallest available opening" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added function to Board class to find the smallest available opening" />
   </component>
 </project>

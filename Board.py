@@ -36,28 +36,28 @@ class Board:
         return new_board
 
     def get_smallest_opening(self) -> dict[str, int]:
-        output: dict[str, int] = dict(x=0, y=0, len=self.length)
         current_counted_len: int = 0
         next_open: dict[str, int] = self.get_next_opening()
+        output: dict[str, int] = dict(x=next_open["x"], y=next_open["y"], len=self.length)
         for y in range(next_open["y"], self.length):
             for x in range(next_open["x"] if y == next_open["y"] else 0, self.length):
-                print(f'{y},{x},{current_counted_len}')
+                #the 1 is the smallest available block, if we have a space that only a 1 will fill, return
                 if output["len"] == 1:
                     return output
                 if x == self.length - 1 and current_counted_len == x:
                     return output
                 if self.board[y][x] != 0 or x == self.length - 1:
+                    #if we are on the edge of the board the x will be reported as 1 less than what it should be
+                    x_offset = 0
+                    # if we are on the edge of the board we won't detect if the tile is empty so if it is add 1
+                    if x == self.length - 1 and self.board[y][x] == 0:
+                        current_counted_len += 1
+                        x_offset += 1
                     if 0 < current_counted_len < output["len"]:
-                        output["x"] = x - current_counted_len
-                        output["y"] = y
-                        output["len"] = current_counted_len
-                        if x == self.length - 1 and self.board[y][x] == 0:
-                            output["len"] += 1
+                        output.update({"x": x - current_counted_len + x_offset, "y": y, "len": current_counted_len})
                         current_counted_len = 0
                     elif x == self.length - 1 and current_counted_len == 0 and self.board[y][x] == 0:
-                        output["x"] = x - current_counted_len
-                        output["y"] = y
-                        output["len"] = 1
+                        output.update({"x": x - current_counted_len, "y": y, "len": 1})
                         return output
                 else:
                     current_counted_len += 1
@@ -129,3 +129,4 @@ class Board:
                     rowOut += White
                 rowOut += str("■") + Reset
             print(rowOut)
+    print()

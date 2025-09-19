@@ -1,3 +1,5 @@
+from functools import reduce
+
 import Tree
 
 def node(filled_lengths_map: dict[int, list[str]], side_lengths_map: dict[int, int], current_row: str, current_length: int, target_length: int):
@@ -47,19 +49,9 @@ def two_valid(row: str):
     return True
 
 def get_number_count_in_row(row: str)-> dict[int, int]:
-    output: dict[int,int] = dict()
-    for char in row:
-        if not output.keys().__contains__(int(char)):
-            output[int(char)] = 0
-        output[int(char)] += 1
-    return output
+    return {int(number):list(row).count(number) for number in set(row)}
 
 def valid_row(row: str, side_lengths_map: dict[int, int]) -> bool:
-    numbers_in_row: dict[int, int] = get_number_count_in_row(row)
-    check_map: dict[int, int] = side_lengths_map.copy()
-    for key in numbers_in_row.keys():
-        check_map[key] -= numbers_in_row[key]
-    for key in check_map.keys():
-        if check_map[key] < 0:
-            return False
-    return True
+    side_length_count_after_row = {number:(side_lengths_map[number] - amount_of_number) for number,amount_of_number in get_number_count_in_row(row).items()}
+    #if all values in side_length_count_after_row are greater than or equal to 0 return true else false
+    return reduce(lambda bool1, bool2: bool1 and bool2, [val >= 0 for val in side_length_count_after_row.values()])
